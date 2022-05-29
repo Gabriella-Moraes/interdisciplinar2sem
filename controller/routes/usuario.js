@@ -71,28 +71,29 @@ module.exports = function (app){
     app.post('/form_bilhetes/usuario/salvar', (req, res) => {
         //res.render('pages/formulario_bilhete_unico')
         try{
-            var usuario ={id: 2,   
+            var usuario = {
+                
                 nome: req.body.nome,
-                CPF: req.body.cpf,
-                RG: req.body.rg,
-                EMISSAO: req.body.emissao,
-                UF: req.body.uf,
-                NOME_MAE: req.body.nomemae,
-                DATA_NASCIMENTO: req.body.data,
-                EMAIL: req.body.email,
-                TELEFONE: req.body.telefone,
-                CELULAR: req.body.celular,
-                CEP: req.body.cep,
-                ENDERECO: req.body.endereco,
-                BAIRRO: req.body.bairro,
-                CIDADE: req.body.cidade,
-                ESTADO: req.body.estado,
-                COMPLEMENTO: req.body.complemento,
-                CURSO: req.body.curso,
-                TURNO: req.body.turno,
-                SEMESTRE: req.body.semestre,
-                DATA_PEDIDO: req.body.datapedido,
-                TARIFA: req.body.tipodetarifa
+                cpf: req.body.cpf,
+                rg: req.body.rg,
+                emissao: req.body.emissao,
+                uf: req.body.uf,
+                nome_mae: req.body.nomemae,
+                data_nascimento: req.body.data,
+                email: req.body.email,
+                telefone: req.body.telefone,
+                celular: req.body.celular,
+                cep: req.body.cep,
+                endereco: req.body.endereco,
+                bairro: req.body.bairro,
+                cidade: req.body.cidade,
+                estado: req.body.estado,
+                complemento: req.body.complemento,
+                curso: req.body.curso,
+                turno: req.body.turno,
+                semestre: req.body.semestre,
+                data_pedido: req.body.datapedido,
+                tarifa: req.body.tipodetarifa
             
             }  
             usuarioBanco.insertUsuario(usuario);

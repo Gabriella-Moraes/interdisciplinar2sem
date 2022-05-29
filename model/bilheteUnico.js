@@ -1,21 +1,15 @@
 const Sequelize = require("sequelize");
 const db = require("./db.js");
 
-const BilheteUnico = db.sequelize.define("formulario_bilhete_unico", {
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    allowNull: false,
-    primaryKey: true,
-  },
+const BilheteUnico = db.sequelize.define("form_bilhetes", {
   nome: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  CPF: {
+  cpf: {
     type: Sequelize.STRING,
   },
-  RG: {
+  rg: {
     type: Sequelize.STRING,
   },
   EMISSAO: {
@@ -72,6 +66,13 @@ const BilheteUnico = db.sequelize.define("formulario_bilhete_unico", {
   },
   TIPO_TARIFA: {
     type: Sequelize.STRING,
+  },
+
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    allowNull: false,
+    primaryKey: true,
   },
 });
 BilheteUnico.sync()
