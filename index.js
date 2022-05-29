@@ -1,12 +1,12 @@
 const express = require("express");
 const db = require("./controller/db.js");
-
 const app = express();
+
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs')
 //npm install ejs
-var path = require('path');
+var path = require('path');//serve para manipular pastas
 app.set('views', path.join(__dirname, '/view/'));
 
 //npm install body-parser
@@ -41,6 +41,10 @@ consign().include('controller/routes',).into(app);
 //Carregamento de arquivos estáticos
 app.use(express.static('view'));
 //app.use('/static', express.static(__dirname + '/public'));
+
+//pasta public
+app.use(express.static(path.join(__dirname, "public")));
+
 
 // esta  deve ser a última linha quando usamos express
 app.listen(8081, function(){
