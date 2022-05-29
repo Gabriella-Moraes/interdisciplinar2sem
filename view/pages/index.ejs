@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Secretaria</title>
+    <%- include('../partials/head_links'); %>
+</head>
+
+<body>
+    <header id="topo">
+        <%- include('../partials/menu_acessibilidade'); %>
+
+        <!--imagem header-->
+        <%- include('../partials/imagem_header'); %>
+
+        <!--menu-->
+        <%- include('../partials/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+    </header>
+    <main id="conteudo_index">
+        <section id="section_index">
+            <div class="parent">
+                <div class="div6">
+                <div class="div1">
+                    <h2 id="caixa2-esquerda">AVISOS</h2>
+                </div>
+                <div class="div3">
+                    <p> A secretaria da Fatec Zona Leste informa: o ajuste de grade será até o dia 16/02/2022 através do requerimento ao coordenador.</p><br>
+                </div>
+                </div>
+                <div class="div5">
+                <div class="div2">
+                    <h2 id="caixa2-direita">HORÁRIO DE ATENDIMENTO</h2>
+                </div>
+                <div class="div4">
+                    <p>Atendimento Presencial se necessário - OBS: Horário sujeito a alteração em período de férias e recesso escolar.</p>
+                    <p>Manhã - 09h às 11h30</p>
+                    <p>Tarde - 14h30 às 16h</p>
+                    <p>Noite - 18h às 20h</p>
+                    <p>ONLINE PELO E-MAIL: f111acad@cps.sp.gov.br</p>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>

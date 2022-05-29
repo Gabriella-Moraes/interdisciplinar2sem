@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Secretaria</title>
+    <%- include('../partials/head_links'); %>
+</head>
+<body>
+    <header id="topo">
+        <%- include('../partials/menu_acessibilidade'); %>
+        
+        <!--imagem header-->
+        <%- include('../partials/imagem_header'); %>
+   
+        <!--menu-->
+        <%- include('../partials/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+    </header>
+    <ul class="breadcrumb">
+        <li><a href="index">Início</a></li>
+        <li><a href="javascript:void(0);">Solicitação</a></li>
+        <li class="breadcrump_pagatual">Formulario Bilhete Unico
+        </li>
+    </ul>
+
+    <main id="conteudo_bilhete_bom">
+        <section class="form_bilhetes">   
+         <form id="valida" id="valida" method="post" action="/form_bilhetes/usuario/salvar" onsubmit="return validar();">
+             <h2>Bilhete Único - Fatec Zona Leste</h2>
+            <fieldset class="fieldset_bilhete">
+                <legend>Dados Pessoais</legend>
+                    <label for="nome" class="required">  Nome </label><br>
+                    <input type="text" name="nome" id="nome" required
+                    placeholder="Nome Completo"><br>
+                    <label for="cpf"  class="required">CPF</label><br>
+                    <input type="text" name="cpf" id="cpf" required
+                    placeholder="999.999.999-99"><br>
+                    <label for="rg"  class="required" >RG</label><br>
+                    <input type="text" name="rg" id="rg" required
+                    placeholder="99.999.999-99"><br>
+                    <label for="emissao"  class="required" >Emissão</label><br>
+                    <input type="text" name="emissao" id="emissao" required
+                    placeholder="Local de emissao"><br>
+                    <label for="uf"  class="required" >UF</label><br>
+                    <input type="text" name="uf" id="uf" required
+                    placeholder="Unidade Federativa"><br>
+                    <label for="nomemae" class="required">Nome Mãe</label><br>
+                    <input type="text" name="nomemae" id="nomemae" required
+                    placeholder="Nome da mãe"><br>
+                    <label for="data"  class="required">Data de nascimento</label><br>
+                    <input type="date" name="data" id="data" required><br>
+                    <label for = "email"  class="required">Email</label><br>
+                    <input type="email" name="email" id="email"
+                    required placeholder="nome@site.com.br"><br>
+                    <label for="telefone" class="required">Telefone Residencial</label><br>
+                    <input type="text" name="telefone" id="telefone" required
+                    placeholder="(99)9999-9999" ><br>
+                    <label for = "celular" class="required">Celular</label><br>
+                    <input type="text" name="celular" id="celular" required
+                    placeholder="(99)9999-9999"><br>
+            </fieldset>
+            <fieldset class="fieldset_bilhete">
+                <legend>Endereço</legend>
+                    <label for="cep" class="required">CEP</label><br>
+                    <input type="text" name="cep" id="cep" required
+                    placeholder="99999-999"><br>
+                    <label for="rua">Endereço</label><br>
+                    <input type="text" name="rua" id="rua"><br>
+                    <label for="bairro">Bairro</label><br>
+                    <input type="text" name="bairro" id="bairro"><br>
+                    <label for="cidade">Cidade</label><br>
+                    <input type="text" name="cidade" id="cidade"><br>
+                    <label for="estado">Estado</label><br>
+                    <input type="text" name="estado" id="estado"><br>
+                    <label for="complemento">Complemento</label><br>
+                    <input type="text" name="complemento" id="complemento"><br>
+                    <label for="curso" class="required">Curso</label><br>
+                    <input type="text" name="curso" id="curso" required
+                     placeholder="Curso"><br>
+                     <label for="turno" class="required">Turno</label><br>
+                    <input type="text" name="turno" id="turno" required
+                     placeholder="turno"><br>
+                     <label for="semestre" class="required">Semestre</label><br>
+                    <input type="text" name="semestre" id="semestre" required
+                    placeholder="semestre"><br>
+                    <label for="datapedido"  class="required" >Data do pedido</label><br>
+                    <input type="date" name="datapedido" id="datapedido" required><br>
+                    <label for="tipodetarifa" class="required">Tipo de Tarifa</label><br>
+                    <input type="text" name="tipodetarifa" id="tipodetarifa" required
+                    placeholder="tipo de tarifa"><br>
+            </fieldset>
+            <fieldset class="fieldset_bilhete">
+                <legend>Aceite</legend>
+                <p>Atenção: Alunos regularmente matriculado o seu cadastro será inserido no sistema da SPTRANS em até 
+                05 dias utéis. Deverá acompnhar a sua solicitação pelo site da SPTRANS.</p> 
+                <p>Declaro e confirmo que todas as informações pretadas neste formulário e sua autenticidade. São de plena responsabilidade minha e estou ciente de que a falsidade nas informações
+                prestadas implicará nas penaslidades cabíveis.*</p>      
+                <p id="checkbox-cor"><input type="checkbox" value="" class="checkbox-1">Ciente e confirmo as informações desse formulário</p>   
+            </fieldset>   
+            <input type="submit" name="enviar" id="enviar" value="::.Enviar.::">
+        </form> 
+          </section> 
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    
+</body>
+</html>

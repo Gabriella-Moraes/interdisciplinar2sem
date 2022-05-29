@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Secretaria</title>
+    <%- include('../partials/head_links'); %>
+</head>
+
+<body>
+    <header id="topo">
+        <%- include('../partials/menu_acessibilidade'); %>
+        
+        <!--imagem header-->
+        <%- include('../partials/imagem_header'); %>
+
+        <!--menu-->
+        <%- include('../partials/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+    </header>
+
+
+    <main id="conteudo">
+        <ul class="breadcrumb">
+            <li><a href="index">Início</a></li>
+            <li class="breadcrump_pagatual">FAQ
+            </li>
+        </ul>
+        <div id="faqcont">
+            <h2 class="titulofaq"><br>FAÇA SUA BUSCA EM NOSSA PAGINA<br></h2>
+        
+            <div class="buscador">
+                <script async src="https://cse.google.com/cse.js?cx=d0c5990102580c6b0"></script>
+                <div class="gcse-search"></div>
+            </div>
+
+            <h2 class="titulofaq">PERGUNTAS FREQUENTES<br> <br></h2>
+
+            <div class='question'>
+                <input type='checkbox' id='question-1'>
+                <label for='question-1' class="pergunta">
+                    Como solicitar a Carteira Estudantil?</label>
+                    <label for='question-1'>
+                        <img src="../assets/imagem/sinal-de-seta-para-baixo-para-navegar.png" alt="seta" class="icone_seta_baixo"> 
+                        <img src="../assets/imagem/seta-para-cima.png" alt="seta" class="icone_seta_cima">
+                    </label>
+
+                
+                <div class='answer'>
+                    <p class="resposta">Para solicitar a Carteira estudantil o aluno deve enviar um e-mail para o endereço
+                        f111.documentos@fatec.sp.gov.br</p>
+                </div>
+            </div>
+
+            <div class='question'>
+                <input type='checkbox' id='question-2'>
+                <label for='question-2' class="pergunta">
+                    Como solicitar o Bilhete Unico?</label>
+                    <label for='question-2'>
+                        <img src="../assets/imagem/sinal-de-seta-para-baixo-para-navegar.png" alt="seta" class="icone_seta_baixo"> 
+                        <img src="../assets/imagem/seta-para-cima.png" alt="seta" class="icone_seta_cima">
+                </label>
+                <div class='answer'>
+                    <p class="resposta">Os cadastros de estudantes enviados eletronicamente pela instituição de ensino à SPTrans são
+                        processados para verificar se os interessados possuem os requisitos necessários para obter o
+                        benefício.
+                        Depois o aluno deverá acessar o site e realizar o cadastro socioeconômico no site da sptrans, e
+                        encaminhar a documentação solicitada por eles no próprio site da sptrans.
+                        A Fatec Zona Leste só realiza o cadastro a análise e liberação do bilhete é realizada pela
+                        sptrans,
+                        o contato deverá ser direito com a sptrans para obter informações da liberação, entrega.
+                        Após o envio dos cadastros, o estudante pode consultar o andamento de seu processo acessando o
+                        site
+                        http://estudante.sprtrans.com.br no “link” Acompanhamento, ou mediante ligação à Central 156 na
+                        Capital ou, ainda, Serviço 08000550121 da CPTM, nos demais Municípios.
+                    </p>
+                </div>
+            </div>
+
+            <div class='question'>
+                <input type='checkbox' id='question-3'>
+                <label for='question-3' class="pergunta">
+                    Como funciona o Trancamento de Matricula?
+                </label>
+                    <label for='question-3'>
+                        <img src="../assets/imagem/sinal-de-seta-para-baixo-para-navegar.png" alt="seta" class="icone_seta_baixo"> <img src="../assets/imagem/seta-para-cima.png" alt="seta" class="icone_seta_cima">
+                </label>
+                <div class='answer'>
+                    <p class="resposta">
+                        O aluno que ingressou na FATEC tem direito, mediante solicitação, a 2 (dois) trancamentos de
+                        matrícula consecutivos ou não.
+                        Cada trancamento de matrícula terá a duração de um período letivo regular.
+                        A solicitação do trancamento de matrícula poderá ser feita a partir do início da pré-matrícula e
+                        até
+                        o transcurso de 2/3 (dois terços) de um dado período letivo.
+                        Durante a vigência do trancamento o aluno não poderá cursar nenhuma disciplina de graduação em
+                        qualquer Faculdade do Centro Paula Souza.
+                        É vedado ao aluno o trancamento de matrícula no período letivo de seu ingresso no curso que
+                        realiza.
+                    </p>
+                </div>
+            </div>
+
+            <div class='question'>
+                <input type='checkbox' id='question-4'>
+                <label for='question-4'class="pergunta">
+                    Como funciona a Transferencia de turno e curso?
+                </label>
+                    <label for='question-4'>
+                        <img src="../assets/imagem/sinal-de-seta-para-baixo-para-navegar.png" alt="seta" class="icone_seta_baixo"> 
+                        <img src="../assets/imagem/seta-para-cima.png" alt="seta" class="icone_seta_cima">
+                </label>
+                <div class='answer'>
+                    <p class="resposta">Não é um processo automático. Ocorre no início dos semestres, datas previstas no calendário
+                        escolar. O processo de transferência é classificatório. O edital trará o número de vagas
+                        remanescentes, os critérios de classificação e desempate. Os alunos deverão se inscrever.
+                        O periodo de inscrição é amplamente divulgado na FATEC Zona Leste e demais Fatecs e Comunidade.
+                    </p>
+                </div>
+            </div>
+
+            <div class='question'>
+                <input type='checkbox' id='question-5'>
+                <label for='question-5'class="pergunta">
+                    Onde encontro os documentos do estagio supervisionado?
+                </label>
+                    <label for='question-5'>
+                        <img src="../assets/imagem/sinal-de-seta-para-baixo-para-navegar.png" alt="seta" class="icone_seta_baixo"> 
+                        <img src="../assets/imagem/seta-para-cima.png" alt="seta" class="icone_seta_cima">
+                </label>
+                <div class='answer'>
+                    <p class="resposta">Todos os documentos referente ao estágio supervisionado estão em
+                        http://www.fateczl.edu.br/estagio
+                    
+                    </p>
+                </div>
+            </div>
+            </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

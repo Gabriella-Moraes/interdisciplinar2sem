@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Secretaria</title>
+    <%- include('../partials/head_links'); %>
+</head>
+
+<body>
+    <header id="topo">
+        <%- include('../partials/menu_acessibilidade'); %>
+        
+        <!--imagem header-->
+        <%- include('../partials/imagem_header'); %>
+      
+        <!--menu-->
+        <%- include('../partials/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+    </header>
+    <ul class="breadcrumb">
+        <li><a href="index">Início</a></li>
+        <li><a href="javascript:void(0);">Requerimento</a></li>
+        <li class="breadcrump_pagatual">Requerimento ao Coordenador</li>
+    </ul>
+    <main id="conteudo_bilhete_bom">
+
+        <section> 
+            <form name="requerimento_ao_coordenador" id="requerimento_ao_coordenador" method="POST">
+                <h2>Requirimento ao Coordenador</h2>
+                <fieldset class="fieldset_bilhete">
+                    <legend>Dados da Requisição</legend>
+                        <label for="nome" class="required">Nome Completo</label><br>
+                        <input type="text" name="nome" id="nome" required placeholder="Nome Completo"><br>
+                        <label for="ra" class="required">RA</label><br>
+                        <input type="text" name="ra" id="ra" required placeholder="9999999999999"><br>
+                        <label for="curso" class="required">Curso e Turno</label><br>
+                        <input type="text" name="curso" id="curso" required><br>
+                        <label for="email" class="required">E-Mail</label><br>
+                        <input type="email" name="email" id="email" required placeholder="nome@site.com.br"><br>
+                        <label for="celular">Celular</label><br>
+                        <input type="tel" name="celular" id="celular" placeholder="(99) 99999-9999"><br>
+                        <label for="mensagem" class="required">Solicitação ao Coordenador</label><br>
+                        <textarea name="mensagem" id="mensagem" placeholder="Digite a mensagem aqui" required></textarea>
+                        
+
+                        <p id="ckb_declaracao"><input type="checkbox" value="" class="checkbox-1">Declaro e confirmo que todas as informações prestadas neste formulário e sua autenticidade são de plena responsabilidade minha e estou ciente de que a falsidade nas informações prestadas implicará nas penalidades cabíveis. Ciente e confirmo as informações desse formulário.</p>
+                        
+                        <input type="submit" name="enviar" id="enviar" value="Enviar"> <input type="reset" name="limpar" id="limpar" value="Limpar">
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>

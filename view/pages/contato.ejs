@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Secretaria</title>
+    <%- include('../partials/head_links'); %>
+</head>
+
+<body>
+    <header id="topo">
+        <%- include('../partials/menu_acessibilidade'); %>
+        
+        <!--imagem header-->
+        <%- include('../partials/imagem_header'); %>
+
+        <!--menu-->
+        <%- include('../partials/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+    </header>
+    
+    <main id="conteudo_contato">
+        <ul class="breadcrumb">
+            <li><a href="index">Início</a></li>
+            <li class="breadcrump_pagatual">Contato
+            </li>
+        </ul>
+        <section>
+            <div class="grid_contato">
+
+            <div class="titulo_funcionario"><h2 class="titulocont">FUNCIONÁRIOS</h2></div>
+            <div class="titulo_atendimento"><h2 class="titulocont">HORÁRIO DE ATENDIMENTO</h2></div>
+
+            <div class="conteudo_funcionario"> 
+                <br>
+                <p>Leonardo - Diretor Acadêmico em exercício</p>
+                <p>Aline - Agente Técnico Administrativo</p>
+                <p>Tatiane - Agente Técnico Administrativo</p>
+                <p>Vera - Agente Técnico Administrativo</p>
+                <p>Diogo - Assessor Administrativo</p>
+            </div>
+
+            <div class="conteudo_atendimento"> 
+                <br>
+                <p>Atendimento Presencial se necessário - OBS: Horário sujeito a alteração em período de férias e recesso escolar.</p>
+                    <p>Manhã - 09h às 11h30</p>
+                    <p>Tarde - 14h30 às 16h</p>
+                    <p>Noite - 18h às 20h</p>
+                    <p>ONLINE PELO E-MAIL: f111acad@cps.sp.gov.br</p><br>
+            </div>
+            </div>
+
+
+            <form name="form_contato" id="form_contato" method="post" onsubmit="return validar();">
+                <fieldset class="fieldset_contato">
+                    <legend>ENVIE SUAS DÚVIDAS PARA O NOSSO E-MAIL</legend>
+                        
+                        <label for="nome" class="required">Nome Completo</label><br>
+                        <input type="text" name="nome" id="nome" required placeholder="Nome Completo"><br>
+                        <label for="curso" class="required">Curso</label><br>
+                        <input type="text" name="curso" id="curso" required><br>
+                        <label for="mensagem" class="required">Mensagem</label><br>
+                        <textarea name="mensagem" id="mensagem" placeholder="Digite a mensagem aqui" required></textarea><br>
+
+                        <input type="submit" name="enviar" id="enviar" value="Enviar"> <input type="reset" name="limpar" id="limpar" value="Limpar">
+                </fieldset>
+
+            </form>
+        </section>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Secretaria</title>
+    <%- include('../partials/head_links'); %>
+</head>
+
+<body>
+    <header id="topo">
+        <%- include('../partials/menu_acessibilidade.html'); %>
+        
+        <!--imagem header-->
+        <%- include('../partials/imagem_header'); %>
+       
+        <!--menu-->
+        <%- include('../partials/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+
+    </header>
+    <ul class="breadcrumb">
+        <li><a href="index">Início</a></li>
+        <li><a href="javascript:void(0);">Grade</a></li>
+        <li class="breadcrump_pagatual">Tecnologia em Polímeros
+        </li>
+    </ul>
+
+    <main id="conteudo_grade2">
+        <section>
+            <h2>Tecnologia em Polímeros</h2>
+            <img class="grade2_imagem" src="../assets/imagem/polimeros1.png" alt="imagem da matriz curricular">
+
+            <p>ESTÁGIO - 240 horas a aprtir do quarto semestre / Trabalho de Graduação - 160 horas a partir do 5º semestre</p>
+
+            <img class="grade2_imagem" src="../assets/imagem/polimeros2.png" alt="imagem da matriz curricular">
+            <br>
+
+        </section>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>
