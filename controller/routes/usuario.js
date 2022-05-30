@@ -5,7 +5,7 @@ const usuarioBanco = require('../../model/repositories/usuarioDB')
 module.exports = function (app){
 
     app.get("/", function(req, resp){
-        resp.render("pages/Login/home");
+        resp.render("pages/main/home");
     })
 
     app.get('/index', function (req, res){

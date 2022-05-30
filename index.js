@@ -1,5 +1,5 @@
 const express = require("express");
-const db = require("./controller/db.js");
+const db = require("./controller/SQL/db.js");
 const app = express();
 
 

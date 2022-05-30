@@ -8,3 +8,5 @@ npm install passport-local
 npm install mysql2
 npm install consign
 npm install sha1
+npm install --save passport
+
