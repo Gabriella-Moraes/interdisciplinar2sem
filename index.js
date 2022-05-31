@@ -30,8 +30,8 @@ app.use(passport.session());
 
 //Validação de login do usuário -> a URL listada abaixo está como atributo do form da página Login.ejs
 app.post('/login/executar', passport.authenticate('local', {
-    successRedirect: '/lista/usuario',
-    failureRedirect: '/login?fail=true'
+    successRedirect: '/index',
+    failureRedirect: '/?fail=true'
 }));
 
 //npm install consign

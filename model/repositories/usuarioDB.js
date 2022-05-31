@@ -61,10 +61,10 @@ async function getUsuarioId(id) {
   else return null;
 }
 
-async function login(email, senha) {
+async function login(nome, senha) {
   const conn = await usuarioDB.connect();
-  const sql = "SELECT * FROM usuario where email=? and senha=?;";
-  const values = [email, seguranca.ocultarsenha(senha)];
+  const sql = "SELECT * FROM usuario where nome=? and senha=?;";
+  const values = [nome, seguranca.ocultarsenha(senha)];
   const [rows] = await conn.query(sql, values);
   if (rows.length > 0) return rows[0];
   else return null;

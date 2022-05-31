@@ -5,7 +5,8 @@ const usuarioBanco = require('../../model/repositories/usuarioDB')
 module.exports = function (app){
 
     app.get("/", function(req, resp){
-        resp.render("pages/main/home");
+        if (req.query.fail) resp.render('pages/main/home', { mensagemLogin: 'Usuario e/ou senha incorretos' });
+        else resp.render('pages/main/home', { mensagemLogin: null });
     })
 
     app.get('/index', function (req, res){
