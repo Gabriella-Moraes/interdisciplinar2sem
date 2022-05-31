@@ -38,6 +38,12 @@ async function insertUsuario(usuario) {
   return await conn.query(sql, values);
 }
 
+/*async function insertUsuario(usuario) {
+  const conn = await usuarioDB.connect();
+  const sql = "INSERT INTO usuario(nome, senha) VALUES (?,?);";
+  const values = [usuario.nome, usuario.senha];
+  return await conn.query(sql, values);
+}*/
 
 async function deleteUsuario(id) {
   const conn = await usuarioDB.connect();

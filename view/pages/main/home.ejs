@@ -12,12 +12,7 @@
                 <div class="text-center mb-4">
                     <img class="logo" src="../assets/imagem/logoFatecZL.png" alt="" class="mb-4 mt-4" width="300" height="172">
                     <h1 class="p-3 mb-2 font-weight-normal"></h1>
-                    <!-- <div th:if="${alerta != null}" th:class="${alerta == 'erro'} ? 'alert alert-danger' : 'alert alert-success '" role="alert">
-                        <h4 th:text="${titulo}" class="alert-heading">Credenciais...</h4>
-                        <p th:text="${texto}">Usuário ou senha incorretos!</p>
-                        <hr>
-                        <p class="mb-0"><small th:text="${subtexto}">Acesso permitido.</small></p>
-                    </div> -->
+             
                     <div class="form-label-group mb-2">
                         <input type="text" name="nome" class="form-control mb-2 border border-primary" id="apelidoUsuario" th:name="username" placeholder="Usuario" required autofocus>
                         <div class="invalid-feedback">Informe seu usuário para acessar o sistema.</div>
@@ -27,7 +22,7 @@
                         <div class="invalid-feedback">Informe sua senha.</div>
                     </div>
                     <div class="mb-4">
-                        <a href="#">Esqueci minha senha.</a>
+                        <a href="../cadastro">Novo usuário.</a>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6">
@@ -36,11 +31,11 @@
                     </div>
                 </form>
                <% if(mensagemLogin) { %>
-    <p>
-        <label style="color: red"><%= mensagemLogin %></label>
-    </p>
-    <%}%>  
-            </div>
+            <p>
+                <label style="color: red"><%= mensagemLogin %></label>
+            </p>
+            <%}%>  
+         </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
