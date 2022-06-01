@@ -984,3 +984,9 @@ label[for="bt_menu"]{
         height: auto;
     }
   }
+
+  @media screen and (min-width: 1200px) {
+    #conteudo_index{
+        padding-bottom: 80px;
+    }
+}

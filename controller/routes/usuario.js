@@ -59,33 +59,6 @@ module.exports = function (app){
     res.render("pages/contato");
   });
 
-
-  app.get("/requerimento_ao_coordenador", function (req, res) {
-    res.render("pages/requerimento_ao_coordenador");
-  });
-  app.post("/requerimento_ao_coordenador/usuario/salvar", (req, res) => {
-    try {
-      var usuario = {
-        nome: req.body.nome,
-        ra: req.body.ra,
-        curso: req.body.curso,
-        turno: req.body.turno,
-        email: req.body.email,
-        celular: req.body.celular,
-        solicitacao: req.body.solicitacao,
-        id: req.body.id,
-      };
-      usuarioBanco.insertUsuario(usuario);
-      res.render("pages/index", { mensagem: "cadastrado" });
-    } catch (error) {
-      res.render("pages/requerimento_ao_coordenador", {
-        title: "Cadastro",
-        mensagem: "Erro no cadastro",
-      });
-    }
-  });
-
-
   app.get("/solicitacao_de_documentos", function (req, res) {
     res.render("pages/solicitacao_de_documentos");
   });
@@ -214,15 +187,17 @@ module.exports = function (app){
   });
 
   //POST da página CadastroUsuario.ejs
-  app.post("/cadastro/usuario/salvar", seguranca.autenticar, (req, res) => {
+  app.post("/cadastro/usuario/salvar", (req, res) => {
     try {
+      console.info("entrou!!!!!!!!!!!!");
       var usuario = {
-        nome: req.body.nomeusuario,
-        senha: seguranca.ocultarsenha(req.body.senhausuario),
+        nome: req.body.nome,
+        senha: seguranca.ocultarsenha(req.body.senha),
       };
       usuarioBanco.insertUsuario(usuario);
-      res.render("cadastro/Sucesso", { mensagem: "cadastrado" });
+      res.render("pages/cadastro/Sucesso", { mensagem: "cadastrado" });
     } catch (error) {
+
       res.render("pages/cadastro/register", {
         title: "Cadastro",
         mensagem: "Erro no cadastro",
