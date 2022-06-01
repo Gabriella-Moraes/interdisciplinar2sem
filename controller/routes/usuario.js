@@ -59,20 +59,64 @@ module.exports = function (app){
     res.render("pages/contato");
   });
 
+
   app.get("/requerimento_ao_coordenador", function (req, res) {
     res.render("pages/requerimento_ao_coordenador");
   });
+  app.post("/requerimento_ao_coordenador/usuario/salvar", (req, res) => {
+    try {
+      var usuario = {
+        nome: req.body.nome,
+        ra: req.body.ra,
+        curso: req.body.curso,
+        turno: req.body.turno,
+        email: req.body.email,
+        celular: req.body.celular,
+        solicitacao: req.body.solicitacao,
+        id: req.body.id,
+      };
+      usuarioBanco.insertUsuario(usuario);
+      res.render("pages/index", { mensagem: "cadastrado" });
+    } catch (error) {
+      res.render("pages/requerimento_ao_coordenador", {
+        title: "Cadastro",
+        mensagem: "Erro no cadastro",
+      });
+    }
+  });
+
 
   app.get("/solicitacao_de_documentos", function (req, res) {
     res.render("pages/solicitacao_de_documentos");
   });
 
-  app.get("/form_bilhetes", function (req, res) {
+  app.post("/solicitacao_de_documentos/usuario/salvar", (req, res) => {
+    try {
+      var usuario = {
+        nome: req.body.nome,
+        ra: req.body.ra,
+        email: req.body.email,
+        curso: req.body.curso,
+        turno: req.body.turno,
+        semestre: req.body.semestre,
+        documento: req.body.documento,
+        id: req.body.id,
+      };
+      usuarioBanco.insertUsuario(usuario);
+      res.render("pages/index", { mensagem: "cadastrado" });
+    } catch (error) {
+      res.render("pages/solicitacao_de_documentos", {
+        title: "Cadastro",
+        mensagem: "Erro no cadastro",
+      });
+    }
+  });
+
+  app.get("/formulario_bilhete_unico", function (req, res) {
     res.render("pages/formulario_bilhete_unico");
   });
 
   app.post("/form_bilhetes/usuario/salvar", (req, res) => {
-    //res.render('pages/formulario_bilhete_unico')
     try {
       var usuario = {
         nome: req.body.nome,
@@ -107,7 +151,7 @@ module.exports = function (app){
     }
   });
 
-  app.get("/form_bilhete_bom", function (req, res) {
+  app.get("/formulario_bilhete_bom", function (req, res) {
     res.render("pages/formulario_bilhete_bom");
   });
 
@@ -137,7 +181,7 @@ module.exports = function (app){
         tarifa: req.body.tipodetarifa,
       };
       usuarioBanco.insertUsuario(usuario);
-      res.render("pages/index", { mensagem: "cadastrado" });
+      res.render("/", { mensagem: "cadastrado" });
     } catch (error) {
       res.render("pages/formulario_bilhete_bom", {
         title: "Cadastro",
