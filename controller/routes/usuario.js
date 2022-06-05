@@ -157,6 +157,8 @@ module.exports = function (app){
     }
   });
 
+
+
   //GET do botão delete da página lista.ejs
   app.get(
     "/delete/usuario/:id",

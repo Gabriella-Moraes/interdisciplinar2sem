@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Usuário</title>
+  </head>
+  <body>
+    <h1><%= mensagem %></h1>
+    <ul>
+      <% docs.forEach(function(bilheteunico){ %>
+        <li>
+            <%= usuario.nome %>
+            <inp ut type="button" onclick="location.href='/delete/bilheteunico/<%= usuario.id %>'" 
+             value="delete" />
+            <input type="button" onclick="location.href='/edit/bilheteunico/<%= usuario.id %>'" 
+             value="editar" />
+        </li>
+      <% }) %>
+    </ul>
+    <br>
+    <br>
+    <input type="button" onclick="location.href='/pages/listabilheteunico'"  value="Novo usuário" />
+  </body>
+</html>
