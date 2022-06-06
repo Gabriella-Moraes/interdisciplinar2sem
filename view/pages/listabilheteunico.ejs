@@ -7,17 +7,27 @@
     <h1><%= mensagem %></h1>
     <ul>
       <% docs.forEach(function(bilheteunico){ %>
-        <li>
-            <%= usuario.nome %>
-            <inp ut type="button" onclick="location.href='/delete/bilheteunico/<%= usuario.id %>'" 
-             value="delete" />
-            <input type="button" onclick="location.href='/edit/bilheteunico/<%= usuario.id %>'" 
-             value="editar" />
-        </li>
+      <li>
+        <h2><%= usuario.nome %></h2>
+        <input
+          type="button"
+          onclick="location.href='/delete/bilheteunico/<%= bilheteunico.id %>'"
+          value="delete"
+        />
+        <input
+          type="button"
+          onclick="location.href='/edit/bilheteunico/<%= bilheteunico.id %>'"
+          value="editar"
+        />
+      </li>
       <% }) %>
     </ul>
-    <br>
-    <br>
-    <input type="button" onclick="location.href='/pages/listabilheteunico'"  value="Novo usuário" />
+    <br />
+    <br />
+    <input
+      type="button"
+      onclick="location.href='/formulario_bilhete_unico'"
+      value="Novo usuário"
+    />
   </body>
 </html>

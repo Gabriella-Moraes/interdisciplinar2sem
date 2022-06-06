@@ -1,5 +1,5 @@
 const seguranca = require("../../model/components/seguranca");
-const bilheteunico = require("../../model/repositories/bilheteunicoDB");
+const bilheteunicoDB = require("../../model/repositories/bilheteunicoDB");
 //const bilheteUnico = require('../../controller/SQL/BilheteUnico')
 
 module.exports = function (app) {
@@ -31,6 +31,7 @@ module.exports = function (app) {
         semestre: req.body.semestre,
         data_pedido: req.body.datapedido,
         tarifa: req.body.tipodetarifa,
+        id: req.body.id,
       };
       console.info(bilheteunico);
       bilheteunicoDB.insertBilheteUnico(bilheteunico);
@@ -49,7 +50,7 @@ module.exports = function (app) {
      seguranca.autenticar,
      async (req, res, next) => {
        try {
-         const docs = await usuarioBanco.selectBilheteUnico();
+         const docs = await bilheteunicoDB.selectBilheteUnico();
          res.render("pages/listabilheteunico", {
            mensagem: "Lista de Usuário",
            docs,
@@ -62,14 +63,14 @@ module.exports = function (app) {
 
   //GET do botão delete da página lista.ejs
   app.get(
-    "/delete/usuario/:id",
+    "/delete/bilheteunico/:id",
     seguranca.autenticar,
     async (req, res, next) => {
       try {
         var id = req.params.id;
         await bilheteunicoDB.deleteBilheteUnico(id);
         const docs = await bilheteunicoDB.selectBilheteUnico();
-        res.render("pages/bilheteunicolista", {
+        res.render("pages/listabilheteunico", {
           mensagem: "Usuário excluído com sucesso",
           docs,
         });
@@ -80,13 +81,17 @@ module.exports = function (app) {
   );
 
   //GET do botão editar da página lista.ejs
-  // app.get("/edit/usuario/:id", seguranca.autenticar, async (req, res, next) => {
-  //   try {
-  //     var id = req.params.id;
-  //     const usuario = await bilheteunicoDB.getUsuarioId(id);
-  //     res.render("usuario/EditUsuario", { mensagem: "", usuario });
-  //   } catch (err) {
-  //     next(err);
-  //   }
-  // });
+  app.get(
+    "/edit/bilheteunico/:id",
+    seguranca.autenticar,
+    async (req, res, next) => {
+      try {
+        var id = req.params.id;
+        const bilheteunico = await bilheteunicoDB.getUsuarioId(id);
+        res.render("bilheteunico/EditUsuario", { mensagem: "", bilheteunico });
+      } catch (err) {
+        next(err);
+      }
+    }
+  );
 } 
