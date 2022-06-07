@@ -7,6 +7,8 @@ module.exports = function (app) {
     res.render("pages/formulario_bilhete_unico");
   });
 
+
+
   app.post("/formulario_bilhete_unico-bilheteunico-salvar", (req, res) => {
     try {
       var bilheteunico = {
@@ -42,15 +44,7 @@ module.exports = function (app) {
         mensagem: "Erro no cadastro",
       });
     }
-      try {
-      bilheteunicoDB.updateBilheteUnico(bilhete);
-      res.render("bilheteunico/Sucesso", { mensagem: "alterado" });
-    } catch (error) {
-      res.render("bilheteunico/EditBilheteUnico", {
-        title: "Edição Cadastro",
-        mensagem: "Erro no cadastro",
-      });
-    }
+    
   });
 
   //GET da página lista.ejs
@@ -97,7 +91,7 @@ module.exports = function (app) {
       try {
         var id = req.params.id;
         const bilheteunico = await bilheteunicoDB.getBilheteUnicoId(id);
-        res.render("/pages/EditBilheteUnico", {
+        res.render("pages/editbilheteunico", {
           mensagem: "",
           bilheteunico,
         });
@@ -108,6 +102,40 @@ module.exports = function (app) {
   );
 
   //POST da página EditUsuario.ejs
-
+  app.post("/cadastro/bilheteunico/edit/salvar", (req, res) => {
+    var bilheteunico = {
+      nome: req.body.nome,
+      cpf: req.body.cpf,
+      rg: req.body.rg,
+      emissao: req.body.emissao,
+      uf: req.body.uf,
+      nome_mae: req.body.nomemae,
+      data_nascimento: req.body.data,
+      email: req.body.email,
+      telefone: req.body.telefone,
+      celular: req.body.celular,
+      cep: req.body.cep,
+      endereco: req.body.endereco,
+      bairro: req.body.bairro,
+      cidade: req.body.cidade,
+      estado: req.body.estado,
+      complemento: req.body.complemento,
+      curso: req.body.curso,
+      turno: req.body.turno,
+      semestre: req.body.semestre,
+      data_pedido: req.body.datapedido,
+      tarifa: req.body.tipodetarifa,
+      id: req.body.id,
+    };
+     try {
+       bilheteunicoDB.updateBilheteUnico(bilheteunico);
+       res.render("pages/Sucesso", { mensagem: "alterado" });
+     } catch (error) {
+       res.render("pages/bilheteunico", {
+         title: "Edição Cadastro",
+         mensagem: "Erro no cadastro",
+       });
+     }
+  });
   
 } 

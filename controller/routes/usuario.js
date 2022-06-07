@@ -1,8 +1,8 @@
-const seguranca = require('../../model/components/seguranca')
-const usuarioBanco = require('../../model/repositories/usuarioDB')
+const seguranca = require("../../model/components/seguranca");
+const usuarioBanco = require("../../model/repositories/usuarioDB");
 //const bilheteUnico = require('../../controller/SQL/BilheteUnico')
 
-module.exports = function (app){
+module.exports = function (app) {
   app.get("/", function (req, resp) {
     if (req.query.fail)
       resp.render("pages/main/home", {
@@ -85,8 +85,6 @@ module.exports = function (app){
     }
   });
 
-
-
   app.get("/prazo", function (req, res) {
     res.render("pages/prazo");
   });
@@ -121,7 +119,6 @@ module.exports = function (app){
       usuarioBanco.insertUsuario(usuario);
       res.render("pages/cadastro/Sucesso", { mensagem: "cadastrado" });
     } catch (error) {
-
       res.render("pages/cadastro/register", {
         title: "Cadastro",
         mensagem: "Erro no cadastro",
@@ -157,8 +154,6 @@ module.exports = function (app){
     }
   });
 
-
-
   //GET do botão delete da página lista.ejs
   app.get(
     "/delete/usuario/:id",
@@ -188,7 +183,7 @@ module.exports = function (app){
       next(err);
     }
   });
-    
+
   //GET da página Login.ejs
   app.get("/login", function (req, res) {
     if (req.query.fail)
@@ -197,5 +192,4 @@ module.exports = function (app){
       });
     else res.render("pages/main/home", { mensagemLogin: null });
   });
-}
-
+};

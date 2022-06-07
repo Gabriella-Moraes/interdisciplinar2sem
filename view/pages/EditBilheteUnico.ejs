@@ -1,15 +1,69 @@
 <html>
-  <head>
-  </head>
+ <head>
+    <title>Lista Solicitação</title>
+    <%- include('../componentes/head_links'); %>
+</head>
+
+<body>
+    <header id="topo">
+        <%- include('../componentes/menu_acessibilidade'); %>
+         
+        <!--imagem header-->
+        <%- include('../componentes/imagem_header'); %>
+
+        <!--menu-->
+        <%- include('../componentes/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+    </header>
   <body>
+    <main>
     <h1>Edição do Cadastro de Usuário</h1>
-    <form action="/cadastro/usuario/edit/salvar" method="post">
-      <input name="id" type="hidden" value=<%=usuario.id %> >
-      <label>Nome: </label>
-      <input name="nome" type="text" value= <%=usuario.nome %> ><br />
-      <input name="senha" type="hidden" value=<%=usuario.senha %>><br />
-   
-      <input type="submit" value="Alterar" />
+    <form action="/cadastro/bilheteunico/edit/salvar" method="post">
+        <input name="id" type="hidden" value=<%=bilheteunico.ID %> >
+       
+        <fieldset class="fieldset_bilhete">
+                <legend>Dados Pessoais</legend>
+                    <label for="nome" class="required">  Nome </label><br>
+                    <input type="text" name="nome" id="nome" required
+                    placeholder="Nome Completo" value= <%=bilheteunico.NOME %>><br>
+                    <label for="cpf"  class="required">CPF</label><br>
+                    <input type="text" name="cpf" id="cpf" required
+                    placeholder="999.999.999-99" value= <%=bilheteunico.CPF %>><br>
+                    <label for="rg"  class="required" >RG</label><br>
+                    <input type="text" name="rg" id="rg" required
+                    placeholder="99.999.999-99" value= <%=bilheteunico.RG %>><br>
+                    <label for="emissao"  class="required" >Emissão</label><br>
+                    <input type="text" name="emissao" id="emissao" required
+                    placeholder="Local de emissao" value= <%=bilheteunico.EMISSAO %> ><br>
+                    <label for="uf"  class="required"  >UF</label><br>
+                    <input type="text" name="uf" id="uf" required
+                    placeholder="Unidade Federativa" value= <%=bilheteunico.UF %>><br>
+                    <label for="nomemae" class="required">Nome Mãe</label><br>
+                    <input type="text" name="nomemae" id="nomemae" required
+                    placeholder="Nome da mãe" value= <%=bilheteunico.NOME_MAE %>><br>
+                    <label for = "email"  class="required" >Email</label><br>
+                    <input type="email" name="email" id="email"
+                    required placeholder="nome@site.com.br" value= <%=bilheteunico.EMAIL %>><br>
+                    <label for="telefone" class="required">Telefone Residencial</label><br>
+                    <input type="text" name="telefone" id="telefone" required
+                    placeholder="(99)9999-9999" value= <%=bilheteunico.TELEFONE %>><br>
+                    <label for = "celular" class="required">Celular</label><br>
+                    <input type="text" name="celular" id="celular" required
+                    placeholder="(99)9999-9999" value= <%=bilheteunico.CELULAR %>><br>
+            </fieldset>
+        
+        <input type="submit" value="Alterar" />
     </form>
+   </main>
    </body>
 </html>

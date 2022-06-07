@@ -49,8 +49,20 @@ async function insertBilheteUnico(bilheteunico) {
   
 async function updateBilheteUnico(bilheteunico) {
   const conn = await bilheteunicoDB.connect();
-  const sql = "UPDATE bilheteunico SET nome=? where id=?;";
-  const values = [bilheteunico.nome];
+  const sql = "UPDATE bilheteunico SET nome=? , cpf=? , rg=?, emissao=? , uf=?, nome_mae=? , data_nascimento=?, email=? , telefone=? , celular=? where id=?;";
+  const values = [
+    bilheteunico.nome,
+    bilheteunico.cpf,
+    bilheteunico.rg,
+    bilheteunico.emissao,
+    bilheteunico.uf,
+    bilheteunico.nome_mae,
+    bilheteunico.data_nascimento,
+    bilheteunico.email,
+    bilheteunico.telefone,
+    bilheteunico.celular,
+    bilheteunico.id,
+  ];
   return await conn.query(sql, values);
 }
 
