@@ -7,7 +7,7 @@ module.exports = function (app) {
     res.render("pages/formulario_bilhete_unico");
   });
 
-  app.post("/formulario_bilhete_unico-usuario-salvar", (req, res) => {
+  app.post("/formulario_bilhete_unico-bilheteunico-salvar", (req, res) => {
     try {
       var bilheteunico = {
         nome: req.body.nome,
@@ -42,24 +42,33 @@ module.exports = function (app) {
         mensagem: "Erro no cadastro",
       });
     }
+      try {
+      bilheteunicoDB.updateBilheteUnico(bilhete);
+      res.render("bilheteunico/Sucesso", { mensagem: "alterado" });
+    } catch (error) {
+      res.render("bilheteunico/EditBilheteUnico", {
+        title: "Edição Cadastro",
+        mensagem: "Erro no cadastro",
+      });
+    }
   });
 
   //GET da página lista.ejs
-   app.get(
-     "/lista/bilheteunico",
-     seguranca.autenticar,
-     async (req, res, next) => {
-       try {
-         const docs = await bilheteunicoDB.selectBilheteUnico();
-         res.render("pages/listabilheteunico", {
-           mensagem: "Lista de Usuário",
-           docs,
-         });
-       } catch (err) {
-         next(err);
-       }
-     }
-   );
+  app.get(
+    "/lista/bilheteunico",
+    seguranca.autenticar,
+    async (req, res, next) => {
+      try {
+        const docs = await bilheteunicoDB.selectBilheteUnico();
+        res.render("pages/listabilheteunico", {
+          mensagem: "Lista de Usuário",
+          docs,
+        });
+      } catch (err) {
+        next(err);
+      }
+    }
+  );
 
   //GET do botão delete da página lista.ejs
   app.get(
@@ -87,11 +96,18 @@ module.exports = function (app) {
     async (req, res, next) => {
       try {
         var id = req.params.id;
-        const bilheteunico = await bilheteunicoDB.getUsuarioId(id);
-        res.render("bilheteunico/EditUsuario", { mensagem: "", bilheteunico });
+        const bilheteunico = await bilheteunicoDB.getBilheteUnicoId(id);
+        res.render("/pages/EditBilheteUnico", {
+          mensagem: "",
+          bilheteunico,
+        });
       } catch (err) {
         next(err);
       }
     }
   );
+
+  //POST da página EditUsuario.ejs
+
+  
 } 

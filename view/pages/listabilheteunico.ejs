@@ -8,15 +8,16 @@
     <ul>
       <% docs.forEach(function(bilheteunico){ %>
       <li>
-        <h2><%= usuario.nome %></h2>
+        <%= bilheteunico.NOME %>
+        <%= bilheteunico.CPF %>
         <input
           type="button"
-          onclick="location.href='/delete/bilheteunico/<%= bilheteunico.id %>'"
+          onclick="location.href='/delete/bilheteunico/<%= bilheteunico.ID %>'"
           value="delete"
         />
         <input
           type="button"
-          onclick="location.href='/edit/bilheteunico/<%= bilheteunico.id %>'"
+          onclick="location.href='/edit/bilheteunico/<%= bilheteunico.ID %>'"
           value="editar"
         />
       </li>
@@ -30,4 +31,5 @@
       value="Novo usuário"
     />
   </body>
+   
 </html>

@@ -45,10 +45,29 @@ async function insertBilheteUnico(bilheteunico) {
     const conn = await bilheteunicoDB.connect();
     const sql = "DELETE FROM bilheteunico where id=?;";
     return await conn.query(sql, [id]);
-  }
+}
+  
+async function updateBilheteUnico(bilheteunico) {
+  const conn = await bilheteunicoDB.connect();
+  const sql = "UPDATE bilheteunico SET nome=? where id=?;";
+  const values = [bilheteunico.nome];
+  return await conn.query(sql, values);
+}
+
+async function getBilheteUnicoId(id) {
+  const conn = await bilheteunicoDB.connect();
+  const sql = "SELECT * FROM bilheteunico where id=?;";
+  const values = [id];
+  const [rows] = await conn.query(sql, values);
+  if (rows.length > 0) return rows[0];
+  else return null;
+}
+
 
 module.exports = {
   insertBilheteUnico,
   selectBilheteUnico,
   deleteBilheteUnico,
+  updateBilheteUnico,
+  getBilheteUnicoId,
 };
