@@ -1,9 +1,10 @@
-<html>
- <head>
-    <title>Lista Solicitação</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Secretaria</title>
     <%- include('../componentes/head_links'); %>
 </head>
-
 <body>
     <header id="topo">
         <%- include('../componentes/menu_acessibilidade'); %>
@@ -27,8 +28,8 @@
     </header>
   <body>
     <main>
-    <h1>Edição do Cadastro de Usuário</h1>
-    <form action="/cadastro/bilheteunico/edit/salvar" method="post">
+    <h1>Edição do Cadastro Bilhete Unico</h1>
+    <form action="/cadastro-bilheteunico-edit-salvar" method="post">
         <input name="id" type="hidden" value=<%=bilheteunico.ID %> >
        
         <fieldset class="fieldset_bilhete">
@@ -62,7 +63,7 @@
                     placeholder="(99)9999-9999" value= <%=bilheteunico.CELULAR %>><br>
             </fieldset>
         
-        <input type="submit" value="Alterar" />
+        <input type="submit" value="Alterar" onclick="location.href='/formulario_bilhete_unico'" />
     </form>
    </main>
    </body>

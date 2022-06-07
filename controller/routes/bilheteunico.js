@@ -102,7 +102,7 @@ module.exports = function (app) {
   );
 
   //POST da página EditUsuario.ejs
-  app.post("/cadastro/bilheteunico/edit/salvar", (req, res) => {
+  app.post("/cadastro-bilheteunico-edit-salvar", (req, res) => {
     var bilheteunico = {
       nome: req.body.nome,
       cpf: req.body.cpf,
