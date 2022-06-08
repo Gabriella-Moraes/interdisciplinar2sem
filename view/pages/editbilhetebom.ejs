@@ -29,71 +29,71 @@
   <body>
     <main>
     <h1>Edição do Cadastro Bilhete Unico</h1>
-    <form action="/cadastro-bilheteunico-edit-salvar" method="post">
-        <input name="id" type="hidden" value=<%=bilheteunico.ID %> >
+    <form action="/cadastro-bilhetebom-edit-salvar" method="post">
+        <input name="id" type="hidden" value=<%=bilhetebom.ID %> >
        
         <fieldset class="fieldset_bilhete">
                 <legend>Dados Pessoais</legend>
                     <label for="nome" class="required">  Nome </label><br>
                     <input type="text" name="nome" id="nome" required
-                    placeholder="Nome Completo" value= <%=bilheteunico.NOME %>><br>
+                    placeholder="Nome Completo" value= <%=bilhetebom.NOME %>><br>
                     <label for="cpf"  class="required">CPF</label><br>
                     <input type="text" name="cpf" id="cpf" required
-                    placeholder="999.999.999-99" value= <%=bilheteunico.CPF %>><br>
+                    placeholder="999.999.999-99" value= <%=bilhetebom.CPF %>><br>
                     <label for="rg"  class="required" >RG</label><br>
                     <input type="text" name="rg" id="rg" required
-                    placeholder="99.999.999-99" value= <%=bilheteunico.RG %>><br>
+                    placeholder="99.999.999-99" value= <%=bilhetebom.RG %>><br>
                     <label for="emissao"  class="required" >Emissão</label><br>
                     <input type="text" name="emissao" id="emissao" required
-                    placeholder="Local de emissao" value= <%=bilheteunico.EMISSAO %> ><br>
+                    placeholder="Local de emissao" value= <%=bilhetebom.EMISSAO %> ><br>
                     <label for="uf"  class="required"  >UF</label><br>
                     <input type="text" name="uf" id="uf" required
-                    placeholder="Unidade Federativa" value= <%=bilheteunico.UF %>><br>
+                    placeholder="Unidade Federativa" value= <%=bilhetebom.UF %>><br>
                     <label for="nomemae" class="required">Nome Mãe</label><br>
                     <input type="text" name="nomemae" id="nomemae" required
-                    placeholder="Nome da mãe" value= <%=bilheteunico.NOME_MAE %>><br>
+                    placeholder="Nome da mãe" value= <%=bilhetebom.NOME_MAE %>><br>
                     <label for = "email"  class="required" >Email</label><br>
                     <input type="email" name="email" id="email"
-                    required placeholder="nome@site.com.br" value= <%=bilheteunico.EMAIL %>><br>
+                    required placeholder="nome@site.com.br" value= <%=bilhetebom.EMAIL %>><br>
                     <label for="telefone" class="required">Telefone Residencial</label><br>
                     <input type="text" name="telefone" id="telefone" required
-                    placeholder="(99)9999-9999" value= <%=bilheteunico.TELEFONE %>><br>
+                    placeholder="(99)9999-9999" value= <%=bilhetebom.TELEFONE %>><br>
                     <label for = "celular" class="required">Celular</label><br>
                     <input type="text" name="celular" id="celular" required
-                    placeholder="(99)9999-9999" value= <%=bilheteunico.CELULAR %>><br>
+                    placeholder="(99)9999-9999" value= <%=bilhetebom.CELULAR %>><br>
             </fieldset>
             <fieldset class="fieldset_bilhete">
                 <legend>Endereço</legend>
                     <label for="cep" class="required">CEP</label><br>
                     <input type="text" name="cep" id="cep" required
-                    placeholder="99999-999" value= <%=bilheteunico.CEP %>><br>
+                    placeholder="99999-999" value= <%=bilhetebom.CEP %>><br>
                     <label for="endereco">Endereço</label><br>
-                    <input type="text" name="endereco" id="rua" value= <%=bilheteunico.ENDERECO %>><br>
+                    <input type="text" name="endereco" id="rua" value= <%=bilhetebom.ENDERECO %>><br>
                     <label for="bairro">Bairro</label><br>
-                    <input type="text" name="bairro" id="bairro" value= <%=bilheteunico.BAIRRO %>><br>
+                    <input type="text" name="bairro" id="bairro" value= <%=bilhetebom.BAIRRO %>><br>
                     <label for="cidade">Cidade</label><br>
-                    <input type="text" name="cidade" id="cidade" value= <%=bilheteunico.CIDADE %>><br>
+                    <input type="text" name="cidade" id="cidade" value= <%=bilhetebom.CIDADE %>><br>
                     <label for="estado">Estado</label><br>
-                    <input type="text" name="estado" id="estado" value= <%=bilheteunico.ESTADO %>><br>
+                    <input type="text" name="estado" id="estado" value= <%=bilhetebom.ESTADO %>><br>
                     <label for="complemento">Complemento</label><br>
-                    <input type="text" name="complemento" id="complemento" value= <%=bilheteunico.COMPLEMENTO %>><br>
+                    <input type="text" name="complemento" id="complemento" value= <%=bilhetebom.COMPLEMENTO %>><br>
                     <label for="curso" class="required">Curso</label><br>
                     <input type="text" name="curso" id="curso" required
-                     placeholder="Curso" value= <%=bilheteunico.CURSO %>><br>
+                     placeholder="Curso" value= <%=bilhetebom.CURSO %>><br>
                      <label for="turno" class="required">Turno</label><br>
                     <input type="text" name="turno" id="turno" required
-                     placeholder="turno" value= <%=bilheteunico.TURNO %>><br>
+                     placeholder="turno" value= <%=bilhetebom.TURNO %>><br>
                      <label for="semestre" class="required">Semestre</label><br>
                     <input type="text" name="semestre" id="semestre" required
-                    placeholder="semestre" value= <%=bilheteunico.SEMESTRE %>><br>
+                    placeholder="semestre" value= <%=bilhetebom.SEMESTRE %>><br>
                     <!-- <label for="datapedido"  class="required" >Data do pedido</label><br>
-                    <input type="date" name="datapedido" id="datapedido" required value= <%=bilheteunico.DATA_PEDIDO %>><br> -->
+                    <input type="date" name="datapedido" id="datapedido" required value= <%=bilhetebom.DATA_PEDIDO %>><br> -->
                     <label for="tipodetarifa" class="required">Tipo de Tarifa</label><br>
                     <input type="text" name="tipodetarifa" id="tipodetarifa" required
-                    placeholder="tipo de tarifa" value= <%=bilheteunico.TARIFA %>><br>
+                    placeholder="tipo de tarifa" value= <%=bilhetebom.TARIFA %>><br>
             </fieldset>
         
-        <input type="submit" value="Alterar" onclick="location.href='/formulario_bilhete_unico'" />
+        <input type="submit" value="Alterar" onclick="location.href='/formulario_bilhete_bom'" />
     </form>
    </main>
    </body>

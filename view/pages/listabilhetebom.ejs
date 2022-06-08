@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Lista Solicitação Bilehte Bom</title>
+    <%- include('../componentes/head_links'); %>
+</head>
+
+<body>
+    <header id="topo">
+        <%- include('../componentes/menu_acessibilidade'); %>
+         
+        <!--imagem header-->
+        <%- include('../componentes/imagem_header'); %>
+
+        <!--menu-->
+        <%- include('../componentes/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+    </header>
+  <body>
+    <main>
+    <form method="post" action="/formulario_bilhete_bom-bilhetebom-salvar" onsubmit="return validar();">
+      <div id="mensagem">
+        <h1><%= mensagem %></h1>
+      </div>
+        <ul>
+          <% docs.forEach(function(bilhetebom){ %>
+          <li>
+          <fieldset class="fieldset_lista">
+          <div id="pass">
+            <div>
+            <%= bilhetebom.NOME %>
+            </div>
+            <div>
+            <%= bilhetebom.CPF %>
+            </div> 
+            <input
+              class="teste"
+              type="button"
+              onclick="location.href='/delete/bilhetebom/<%= bilhetebom.ID %>'"
+              value="delete"
+            />
+            <input
+              class="teste"
+              type="button"
+              onclick="location.href='/edit/bilhetebom/<%= bilhetebom.ID %>'"
+              value="editar"
+            />
+          </div>
+          </fieldset>
+          </li>
+          <% }) %>
+        </ul>
+        <br />
+        <br />
+        <input
+          class="teste"
+          type="button"
+          onclick="location.href='/formulario_bilhete_bom'"
+          value="Novo usuário"
+        />
+      </form>
+    </main>
+</body>
+    <footer>
+    <%- include('../componentes/footer'); %>
+    </footer>
+</html>

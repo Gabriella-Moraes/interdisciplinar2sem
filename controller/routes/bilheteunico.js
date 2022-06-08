@@ -49,7 +49,7 @@ module.exports = function (app) {
 
   //GET da página lista.ejs
   app.get(
-    "/lista/bilheteunico",
+    "/listabilheteunico",
     seguranca.autenticar,
     async (req, res, next) => {
       try {
