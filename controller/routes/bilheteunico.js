@@ -85,7 +85,7 @@ module.exports = function (app) {
 
   //GET do botão editar da página lista.ejs
   app.get(
-    "/edit/bilheteunico/:id",
+    "/edit-bilheteunico/:id",
     seguranca.autenticar,
     async (req, res, next) => {
       try {
