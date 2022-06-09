@@ -45,7 +45,7 @@ module.exports = function (app) {
 
   //GET da página lista.ejs
   app.get(
-    "/lista/bilhetebom",
+    "/listabilhetebom",
     seguranca.autenticar,
     async (req, res, next) => {
       try {
@@ -81,7 +81,7 @@ module.exports = function (app) {
 
   //GET do botão editar da página lista.ejs
   app.get(
-    "/edit/bilhetebom/:id",
+    "/edit-bilhetebom/:id",
     seguranca.autenticar,
     async (req, res, next) => {
       try {

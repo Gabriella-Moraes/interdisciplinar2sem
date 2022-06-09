@@ -81,3 +81,10 @@ DOCUMENTO VARCHAR (50),
 ID int AUTO_INCREMENT primary key
 );
 
+
+CREATE TABLE interSecretaria.CONTATO(
+    NOME VARCHAR (225),
+    CURSO VARCHAR (225),
+    MENSAGEM VARCHAR (500),
+    ID int AUTO_INCREMENT primary key
+);
