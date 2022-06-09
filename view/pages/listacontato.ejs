@@ -28,31 +28,31 @@
     </header>
   <body>
     <main>
-    <form method="post" action="/formulario_bilhete_unico-bilheteunico-salvar" onsubmit="return validar();">
+    <form method="post" action="/contato-usuario-salvar" onsubmit="return validar();">
       <div id="mensagem">
-        <h1>Lista Bilhete Unico</h1>
+        <h1><%= mensagem %></h1>
       </div>
         <ul>
-          <% docs.forEach(function(bilheteunico){ %>
+          <% docs.forEach(function(contato){ %>
           <li>
           <fieldset class="fieldset_lista">
           <div id="pass">
             <div>
-            <%= bilheteunico.NOME %>
+            <%= contato.NOME %>
             </div>
             <div>
-            <%= bilheteunico.CPF %>
+            <%= contato.MENSAGEM %>
             </div> 
             <input
               class="teste"
               type="button"
-              onclick="location.href='/delete/bilheteunico/<%= bilheteunico.ID %>'"
+              onclick="location.href='/delete/contato/<%= contato.ID %>'"
               value="delete"
             />
             <input
               class="teste"
               type="button"
-              onclick="location.href='/edit-bilheteunico/<%= bilheteunico.ID %>'"
+              onclick="location.href='/edit-contato/<%= contato.ID %>'"
               value="editar"
             />
           </div>
@@ -65,7 +65,7 @@
         <input
           class="teste"
           type="button"
-          onclick="location.href='/formulario_bilhete_unico'"
+          onclick="location.href='/contato'"
           value="Novo usuário"
         />
       </form>
