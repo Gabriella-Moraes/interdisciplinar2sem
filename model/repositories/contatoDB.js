@@ -7,7 +7,7 @@ async function insertContato(contato) {
     "INSERT INTO interSecretaria.CONTATO( nome, curso, mensagem, id) VALUES (?,?,?,?);";
     const values = [
       contato.nome,
-      contato.cpf,
+      contato.curso,
       contato.mensagem,
       contato.id,
   ];

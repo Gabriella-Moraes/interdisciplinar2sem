@@ -55,7 +55,7 @@ module.exports = function (app) {
       try {
         const docs = await bilheteunicoDB.selectBilheteUnico();
         res.render("pages/listabilheteunico", {
-          mensagem: "Lista de Usuário",
+          mensagem: "Lista Bilhete Unico",
           docs,
         });
       } catch (err) {
@@ -66,7 +66,7 @@ module.exports = function (app) {
 
   //GET do botão delete da página lista.ejs
   app.get(
-    "/delete/bilheteunico/:id",
+    "/delete-bilheteunico/:id",
     seguranca.autenticar,
     async (req, res, next) => {
       try {
@@ -74,7 +74,7 @@ module.exports = function (app) {
         await bilheteunicoDB.deleteBilheteUnico(id);
         const docs = await bilheteunicoDB.selectBilheteUnico();
         res.render("pages/listabilheteunico", {
-          mensagem: "Usuário excluído com sucesso",
+          mensagem: "Lista Bilhete Unico",
           docs,
         });
       } catch (err) {

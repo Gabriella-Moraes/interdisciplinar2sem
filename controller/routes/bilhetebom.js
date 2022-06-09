@@ -62,7 +62,7 @@ module.exports = function (app) {
 
   //GET do botão delete da página lista.ejs
   app.get(
-    "/delete/bilhetebom/:id",
+    "/delete-bilhetebom/:id",
     seguranca.autenticar,
     async (req, res, next) => {
       try {

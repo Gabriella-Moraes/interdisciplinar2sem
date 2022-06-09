@@ -13,6 +13,7 @@ module.exports = function (app) {
         nome: req.body.nome,
         curso: req.body.curso,
         mensagem: req.body.mensagem,
+        id: req.body.id
       };
       console.info(contato);
       contatoDB.insertContato(contato);
@@ -29,8 +30,8 @@ module.exports = function (app) {
   app.get("/listacontato", seguranca.autenticar, async (req, res, next) => {
     try {
       const docs = await contatoDB.selectContato();
-      res.render("pages/listaContato", {
-        mensagem: "Lista de Usuário",
+      res.render("pages/listacontato", {
+        mensagem: "Lista de Mensagens / Contato",
         docs,
       });
     } catch (err) {
@@ -40,7 +41,7 @@ module.exports = function (app) {
 
   //GET do botão delete da página lista.ejs
   app.get(
-    "/delete/contato/:id",
+    "/delete-contato/:id",
     seguranca.autenticar,
     async (req, res, next) => {
       try {
