@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <title>Secretaria</title>
     <%- include('../componentes/head_links'); %>
-  </head>
-
-  <body>
+</head>
+<body>
     <header id="topo">
-      <%- include('../componentes/menu_acessibilidade'); %>
+        <%- include('../componentes/menu_acessibilidade'); %>
+         
+        <!--imagem header-->
+        <%- include('../componentes/imagem_header'); %>
 
-      <!--imagem header-->
-      <%- include('../componentes/imagem_header'); %>
-
-      <!--menu-->
-      <%- include('../componentes/nav'); %>
-
-      <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
+        <!--menu-->
+        <%- include('../componentes/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
         </div>
-      </div>
-      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-      <script>
-        new window.VLibras.Widget("https://vlibras.gov.br/app");
-      </script>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
     </header>
-    <ul class="breadcrumb">
-      <li><a href="index">Início</a></li>
-      <li><a href="javascript:void(0);">Requerimento</a></li>
-      <li class="breadcrump_pagatual">Requerimento ao Coordenador</li>
-    </ul>
-    <main id="conteudo_bilhete_bom">
-      <section>
-        <form
-          name="requerimento_ao_coordenador"
-          id="requerimento_ao_coordenador"
-          action="/requerimento_ao_coordenador-usuario-salvar"
-          method="POST"
-        >
-          <h2>Requirimento ao Coordenador</h2>
+  <body>
+    <main>
+    <h1>Edição do Requirimento ao Coordenador</h1>
+    <form name="requerimento_ao_coordenador" id="requerimento_ao_coordenador" action="/requerimento_ao_coordenador-usuario-salvar" method="POST">
+      <input name="id" type="hidden" value=<%=requerimento.ID %> >
           <fieldset class="fieldset_bilhete">
             <legend>Dados da Requisição</legend>
             <label for="nome" class="required">Nome Completo</label><br />
@@ -49,6 +40,7 @@
               id="nome"
               required
               placeholder="Nome Completo"
+              value=<%=requerimento.NOME %>
             /><br />
             <label for="ra" class="required">RA</label><br />
             <input
@@ -57,11 +49,12 @@
               id="ra"
               required
               placeholder="9999999999999"
+              value=<%=requerimento.RA %>
             /><br />
             <label for="curso" class="required">Curso</label><br />
-            <input type="text" name="curso" id="curso" required /><br />
+            <input type="text" name="curso" id="curso" required value=<%=requerimento.CURSO %>/><br />
             <label for="turno" class="required">Turno</label><br />
-            <input type="text" name="turno" id="turno" required /><br />
+            <input type="text" name="turno" id="turno" required value=<%=requerimento.TURNO %>/><br />
             <label for="email" class="required">E-Mail</label><br />
             <input
               type="email"
@@ -69,6 +62,7 @@
               id="email"
               required
               placeholder="nome@site.com.br"
+              value=<%=requerimento.EMAIL %>
             /><br />
             <label for="celular">Celular</label><br />
             <input
@@ -76,6 +70,7 @@
               name="celular"
               id="celular"
               placeholder="(99) 99999-9999"
+              value=<%=requerimento.CELULAR %>
             /><br />
             <label for="mensagem" class="required"
               >Solicitação ao Coordenador</label
@@ -85,6 +80,7 @@
               id="mensagem"
               placeholder="Digite a mensagem aqui"
               required
+              value=<%=requerimento.SOLICiTACAO %>
             ></input>
 
             <p id="ckb_declaracao">
@@ -96,12 +92,9 @@
               formulário.
             </p>
 
-            <input type="submit" name="enviar" id="enviar" value="Enviar" />
-            <input type="reset" name="limpar" id="limpar" value="Limpar" />
+            <input type="submit" value="Alterar" onclick="location.href='/requerimento_ao_coordenador'" />
           </fieldset>
         </form>
-      </section>
-    </main>
-    <footer><%- include('../componentes/footer'); %></footer>
-  </body>
+   </main>
+   </body>
 </html>

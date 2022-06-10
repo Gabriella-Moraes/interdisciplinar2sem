@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Lista Solicitação</title>
+    <%- include('../componentes/head_links'); %>
+</head>
+
+<body>
+    <header id="topo">
+        <%- include('../componentes/menu_acessibilidade'); %>
+         
+        <!--imagem header-->
+        <%- include('../componentes/imagem_header'); %>
+
+        <!--menu-->
+        <%- include('../componentes/nav'); %>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+          <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+          </script>
+    </header>
+  <body>
+    <main>
+    <form method="post" action="/formulario_bilhete_unico-requerimento-salvar" onsubmit="return validar();">
+      <div id="mensagemList">
+        <h1><%= mensagem %></h1>
+      </div>
+        <ul>
+          <% docs.forEach(function(requerimento){ %>
+          <li>
+          <fieldset class="fieldset_lista">
+          <div id="pass">
+            <div>
+            <%= requerimento.NOME %>
+            </div>
+            <div>
+            <%= requerimento.RA %>
+            </div> 
+            <input
+              class="teste"
+              type="button"
+              onclick="location.href='/delete-requerimento/<%= requerimento.ID %>'"
+              value="delete"
+            />
+            <input
+              class="teste"
+              type="button"
+              onclick="location.href='/edit-requerimento/<%= requerimento.ID %>'"
+              value="editar"
+            />
+          </div>
+          </fieldset>
+          </li>
+          <% }) %>
+        </ul>
+        <br />
+        <br />
+        <input
+          class="teste"
+          type="button"
+          onclick="location.href='/requerimento_ao_coordenador'"
+          value="Novo usuário"
+        />
+      </form>
+    </main>
+    <footer>
+    <%- include('../componentes/footer'); %>
+    </footer>
+</html>
