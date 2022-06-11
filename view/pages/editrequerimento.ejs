@@ -29,7 +29,7 @@
   <body>
     <main>
     <h1>Edição do Requirimento ao Coordenador</h1>
-    <form name="requerimento_ao_coordenador" id="requerimento_ao_coordenador" action="/requerimento_ao_coordenador-usuario-salvar" method="POST">
+    <form name="requerimento_ao_coordenador" id="requerimento_ao_coordenador" action="/cadastro-requerimento-edit-salvar" method="POST">
       <input name="id" type="hidden" value=<%=requerimento.ID %> >
           <fieldset class="fieldset_bilhete">
             <legend>Dados da Requisição</legend>
@@ -80,7 +80,7 @@
               id="mensagem"
               placeholder="Digite a mensagem aqui"
               required
-              value=<%=requerimento.SOLICiTACAO %>
+              value=<%=requerimento.SOLICITACAO %>
             ></input>
 
             <p id="ckb_declaracao">
@@ -91,9 +91,8 @@
               penalidades cabíveis. Ciente e confirmo as informações desse
               formulário.
             </p>
-
-            <input type="submit" value="Alterar" onclick="location.href='/requerimento_ao_coordenador'" />
           </fieldset>
+             <input type="submit" value="Alterar" onclick="location.href='/requerimento_ao_coordenador'" />
         </form>
    </main>
    </body>

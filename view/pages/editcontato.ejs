@@ -29,11 +29,11 @@
   <body>
     <main>
     <h1>Edição do Cadastro Bilhete Unico</h1>
-        <input name="id" type="hidden" value=<%=contato.ID %> >
        
       
             <form action="/cadastro-contato-edit-salvar" name="form_contato" id="form_contato" method="post" onsubmit="return validar();">
-                <fieldset class="fieldset_contato">
+              <input name="id" type="hidden" value=<%=contato.ID %> >
+              <fieldset class="fieldset_contato">
                     <legend>ENVIE SUAS DÚVIDAS PARA O NOSSO E-MAIL</legend>
                         
                         <label for="nome" class="required">Nome Completo</label><br>
@@ -44,7 +44,7 @@
                         <textarea name="mensagem" id="mensagem" placeholder="Digite a mensagem aqui" required value= <%=contato.MENSAGEM %>></textarea><br>
                 </fieldset>
 
-                 <input type="submit" value="Alterar" onclick="location.href='/contato'" /> <input type="reset" name="limpar" id="limpar" value="Limpar">
+              <input type="submit" value="Alterar" onclick="location.href='/contato'" />
          </form>
    </main>
    </body>

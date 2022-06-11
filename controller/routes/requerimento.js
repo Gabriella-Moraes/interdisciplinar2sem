@@ -102,7 +102,7 @@ module.exports = function (app){
       requerimentoDB.updateRequerimento(requerimento);
        res.render("pages/Sucesso", { mensagem: "alterado" });
      } catch (error) {
-       res.render("pages/requerimento", {
+       res.render("pages/requerimento_ao_coordenador", {
          title: "Edição Cadastro",
          mensagem: "Erro no cadastro",
        });

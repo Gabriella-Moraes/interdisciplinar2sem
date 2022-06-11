@@ -37,7 +37,7 @@ async function deleteRequerimento(id) {
 }
 
 async function updateRequerimento(requerimento) {
-  const conn = await bilheteunicoDB.connect();
+  const conn = await requerimentoDB.connect();
   const sql =
     "UPDATE requerimento SET nome=? , ra=? , curso=?, turno=? , email=?, celular=? , solicitacao=? where id=?;";
   const values = [

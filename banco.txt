@@ -58,7 +58,7 @@ create table interSecretaria.usuario(
     senha varchar(255)
 );
 
-CREATE TABLE interSecretaria.REQUERIMENTO_COORD(
+CREATE TABLE interSecretaria.REQUERIMENTO(
 NOME VARCHAR (225),
 RA VARCHAR(50) ,
 CURSO VARCHAR(250),
@@ -88,3 +88,5 @@ CREATE TABLE interSecretaria.CONTATO(
     MENSAGEM VARCHAR (500),
     ID int AUTO_INCREMENT primary key
 );
+
+insert into webii.usuario values(1,'admin', '8cb2237d0679ca88db6464eac60da96345513964');

@@ -108,6 +108,8 @@ module.exports = function (app) {
     else res.render("pages/cadastro/register", { mensagem: null });
   });
 
+
+
   //POST da página CadastroUsuario.ejs
   app.post("/cadastro/usuario/salvar", (req, res) => {
     try {
