@@ -63,27 +63,27 @@ module.exports = function (app) {
     res.render("pages/solicitacao_de_documentos");
   });
 
-  app.post("/solicitacao_de_documentos/usuario/salvar", (req, res) => {
-    try {
-      var usuario = {
-        nome: req.body.nome,
-        ra: req.body.ra,
-        email: req.body.email,
-        curso: req.body.curso,
-        turno: req.body.turno,
-        semestre: req.body.semestre,
-        documento: req.body.documento,
-        id: req.body.id,
-      };
-      usuarioBanco.insertUsuario(usuario);
-      res.render("pages/index", { mensagem: "cadastrado" });
-    } catch (error) {
-      res.render("pages/solicitacao_de_documentos", {
-        title: "Cadastro",
-        mensagem: "Erro no cadastro",
-      });
-    }
-  });
+  // app.post("/solicitacao_de_documentos/usuario/salvar", (req, res) => {
+  //   try {
+  //     var usuario = {
+  //       nome: req.body.nome,
+  //       ra: req.body.ra,
+  //       email: req.body.email,
+  //       curso: req.body.curso,
+  //       turno: req.body.turno,
+  //       semestre: req.body.semestre,
+  //       documento: req.body.documento,
+  //       id: req.body.id,
+  //     };
+  //     usuarioBanco.insertUsuario(usuario);
+  //     res.render("pages/index", { mensagem: "cadastrado" });
+  //   } catch (error) {
+  //     res.render("pages/solicitacao_de_documentos", {
+  //       title: "Cadastro",
+  //       mensagem: "Erro no cadastro",
+  //     });
+  //   }
+  // });
 
   app.get("/prazo", function (req, res) {
     res.render("pages/prazo");
@@ -107,6 +107,12 @@ module.exports = function (app) {
       res.render("pages/cadastro/register", { mensagem: "Cadastro" });
     else res.render("pages/cadastro/register", { mensagem: null });
   });
+
+    app.get("/recuperarsenha", function (req, res) {
+      if (req.query.fail)
+        res.render("pages/usuario/EditUsuario", { mensagem: "Cadastro" });
+      else res.render("pages/usuario/EditUsuario", { mensagem: null });
+    });
 
 
 
@@ -137,9 +143,9 @@ module.exports = function (app) {
     };
     try {
       usuarioBanco.updateUsuario(usuario);
-      res.render("usuario/Sucesso", { mensagem: "alterado" });
+      res.render("pages/usuario/Sucesso", { mensagem: "alterado" });
     } catch (error) {
-      res.render("usuario/EditUsuario", {
+      res.render("pages/usuario/EditUsuario", {
         title: "Edição Cadastro",
         mensagem: "Erro no cadastro",
       });
@@ -150,7 +156,7 @@ module.exports = function (app) {
   app.get("/lista/usuario", seguranca.autenticar, async (req, res, next) => {
     try {
       const docs = await usuarioBanco.selectUsuario();
-      res.render("usuario/Lista", { mensagem: "Lista de Usuário", docs });
+      res.render("pages/usuario/Lista", { mensagem: "Lista de Usuário", docs });
     } catch (err) {
       next(err);
     }
