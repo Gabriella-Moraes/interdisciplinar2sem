@@ -123,6 +123,7 @@ module.exports = function (app) {
       var usuario = {
         nome: req.body.nome,
         senha: seguranca.ocultarsenha(req.body.senha),
+        id: req.body.id,
       };
       usuarioBanco.insertUsuario(usuario);
       res.render("pages/cadastro/Sucesso", { mensagem: "cadastrado" });
@@ -186,7 +187,7 @@ module.exports = function (app) {
     try {
       var id = req.params.id;
       const usuario = await usuarioBanco.getUsuarioId(id);
-      res.render("usuario/EditUsuario", { mensagem: "", usuario });
+      res.render("pages/usuario/EditUsuario", { mensagem: "", usuario });
     } catch (err) {
       next(err);
     }
