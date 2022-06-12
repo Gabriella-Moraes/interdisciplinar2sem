@@ -13,7 +13,7 @@ body {
     background-color: #bc0003;
 }
 
-.logo {
+.logo_fatec {
     display: inline;
     width: 10%;
     height: auto;
@@ -959,7 +959,9 @@ label[for="bt_menu"]{
         font-size: 0.9em;
         margin-left: 19%;
         margin-right: 19%; 
+        padding-top: 10px;
     }
+    
 }
 
 @media screen and (max-width: 350px){
@@ -980,6 +982,8 @@ label[for="bt_menu"]{
         font-size: 0.7em;
         margin-left: 10%;
         margin-right: 10%; 
+        padding-top: 15px;
+        padding-top: 5px;
     }
 
 
@@ -1077,3 +1081,61 @@ label[for="bt_menu"]{
     
     
 }
+
+
+/*menu login teste*/
+
+#login-container{
+    background-color: #FFFF;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 10vh;
+    border-radius: 10px;
+}
+.login{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+#apelidoUsuario, #senhaUsuario, .btn{
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.bg-dark{
+    background-color: #2E2E2E;
+}
+.logo{
+    width: 70%;
+    height: auto;
+}
+
+#apelidoUsuario:focus{
+    border-bottom: 2px;
+}
+#apelidoUsuario, #senhaUsuario{
+    border: 2px solid #2E2E2E;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius: 0%;
+    width: 90%;
+    height: 40px;
+    background-color: #fff;
+    margin-left: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.btn{
+    border: 2px solid #2E2E2E;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.btn:focus #apelidoUsuario:focus, #senhaUsuario:focus{
+    border-bottom: 2px solid #2E2E2E;
+}
+
+

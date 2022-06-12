@@ -2,32 +2,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
     <title>.:: Sistema Secretaria ::.</title>
+    <%- include('../../componentes/head_links.ejs'); %>
 </head>
 <body class="bg-dark ">
-    <div class=" row justify-content-center mt-4">
-        <div class="row justify-content-center mt-2" >
+    <div id="login-container">
             <form method="POST" class="login" action="/login/executar" >
                 <div class="text-center mb-4">
-                    <img class="logo" src="../assets/imagem/logoFatecZL.png" alt="" class="mb-4 mt-4" width="300" height="172">
+                    <img class="logo" src="../../assets/imagem/logodois.jpg" alt="" class="mb-4 mt-4" width="300" height="172">
                     <h1 class="p-3 mb-2 font-weight-normal"></h1>
              
                     <div class="form-label-group mb-2 input-group">
-                        <div class="input-group-text form-label-group mb-2">@</div>
-                        <input type="text" name="nome" class="form-control mb-2 border border-primary" id="apelidoUsuario" th:name="username" placeholder="Usuario" required autofocus>
-                        <div class="invalid-feedback">Informe seu usuário para acessar o sistema.</div>
+                        <h3>Informe seu usuário para acessar o sistema.</h3>
+                        <input type="text" name="nome" id="apelidoUsuario" th:name="username" placeholder="Usuario" required autofocus>
                     </div>
                     <div class="form-label-group mb-2">
-                        <input type="password" name="senha" class="form-control mb-2 border border-primary" id="senhaUsuario" th:name="password" placeholder="Digite Sua Senha" required>
-                        <div class="invalid-feedback">Informe sua senha.</div>
+                        <h3>Informe sua senha.</h3>
+                        <input type="password" name="senha" id="senhaUsuario" th:name="password" placeholder="Digite Sua Senha" required>
                     </div>
                     <div class="mb-4">
                         <a href="../cadastro">Novo usuário.</a>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6">
-                            <button class="btn btn-danger" type="submit" > Entrar </button>
+                            <button class="btn" type="submit" > Entrar </button>
                         </div>
                     </div>
                 </form>
@@ -36,7 +35,6 @@
                 <label style="color: red"><%= mensagemLogin %></label>
             </p>
             <%}%>  
-         </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
