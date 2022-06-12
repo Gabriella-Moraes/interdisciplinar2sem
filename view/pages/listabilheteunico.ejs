@@ -1,76 +1,121 @@
 <!DOCTYPE html>
 <html>
- <head>
+  <head>
     <title>Lista Solicitação</title>
     <%- include('../componentes/head_links'); %>
-</head>
+  </head>
 
-<body>
-    <header id="topo">
-        <%- include('../componentes/menu_acessibilidade'); %>
-         
-        <!--imagem header-->
-        <%- include('../componentes/imagem_header'); %>
-
-        <!--menu-->
-        <%- include('../componentes/nav'); %>
-        
-        <div vw class="enabled">
-            <div vw-access-button class="active"></div>
-            <div vw-plugin-wrapper>
-              <div class="vw-plugin-top-wrapper"></div>
-            </div>
-        </div>
-          <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-          <script>
-            new window.VLibras.Widget('https://vlibras.gov.br/app');
-          </script>
-    </header>
   <body>
-    <main>
-    <form method="post" action="/formulario_bilhete_unico-bilheteunico-salvar" onsubmit="return validar();">
+    <header id="topo">
+      <%- include('../componentes/menu_acessibilidade'); %>
+
+      <!--imagem header-->
+      <%- include('../componentes/imagem_header'); %>
+
+      <!--menu-->
+      <%- include('../componentes/nav'); %>
+
+      <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      </script>
+    </header>
+  </body>
+  <main>
+    <form
+      method="post"
+      action="/formulario_bilhete_unico-bilheteunico-salvar"
+      onsubmit="return validar();"
+    >
       <div id="mensagemList">
         <h1><%= mensagem %></h1>
       </div>
-        <ul>
-          <% docs.forEach(function(bilheteunico){ %>
-          <li>
-          <fieldset class="fieldset_lista">
-          <div id="pass">
-            <div>
-            <%= bilheteunico.NOME %>
+    <section>
+      <table class="lista">
+        <thead>
+          <tr class="listacabecalho">
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Deletar</th>
+            <th>Editar</th>
+          </tr>
+         <% docs.forEach(function(bilheteunico){ %>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= bilheteunico.NOME %></td>
+            <td><%= bilheteunico.CPF %></td>
+             <td> 
+              <input
+                class="botaolistadelete"
+                type="button"
+                onclick="location.href='/delete-bilheteunico/<%= bilheteunico.ID %>'"
+                value=":: Deletar ::"
+              /></td>
+            <td>
+              <input
+                class="botaolistaedit"
+                type="button"
+                onclick="location.href='/edit-bilheteunico/<%= bilheteunico.ID %>'"
+                value=":: Editar ::"
+              /></td>
+          </tr>
+     
+           <% }) %>
+        
+           
+          <!-- <ul>
+            <% docs.forEach(function(bilheteunico){ %>
+            <li>
+            <fieldset class="fieldset_lista">
+            <div id="pass">
+              <div>
+              <%= bilheteunico.NOME %>
+              </div>
+              <div>
+              <%= bilheteunico.CPF %>
+              </div> 
+              <input
+                class="teste"
+                type="button"
+                onclick="location.href='/delete-bilheteunico/<%= bilheteunico.ID %>'"
+                value="delete"
+              />
+              <input
+                class="teste"
+                type="button"
+                onclick="location.href='/edit-bilheteunico/<%= bilheteunico.ID %>'"
+                value="editar"
+              />
             </div>
-            <div>
-            <%= bilheteunico.CPF %>
-            </div> 
-            <input
-              class="teste"
-              type="button"
-              onclick="location.href='/delete-bilheteunico/<%= bilheteunico.ID %>'"
-              value="delete"
-            />
-            <input
-              class="teste"
-              type="button"
-              onclick="location.href='/edit-bilheteunico/<%= bilheteunico.ID %>'"
-              value="editar"
-            />
-          </div>
-          </fieldset>
-          </li>
-          <% }) %>
-        </ul>
-        <br />
-        <br />
+            </fieldset>
+            </li>
+            <% }) %>
+          </ul>
+          <br />
+          <br />
+          <input
+            class="teste"
+            type="button"
+            onclick="location.href='/formulario_bilhete_unico'"
+            value="Novo usuário"
+          /> -->
+        </tbody>
+      </table>
+    </section>    
         <input
-          class="teste"
-          type="button"
-          onclick="location.href='/formulario_bilhete_unico'"
-          value="Novo usuário"
-        />
-      </form>
-    </main>
-    <footer>
-    <%- include('../componentes/footer'); %>
-    </footer>
+            class="teste"
+            type="button"
+            onclick="location.href='/formulario_bilhete_unico'"
+            value="Novo usuário"
+          />
+    </form>
+  </main>
+  <footer><%- include('../componentes/footer'); %></footer>
 </html>

@@ -1007,14 +1007,55 @@ label[for="bt_menu"]{
         padding-bottom: 80px;
     }
 
-
-    .teste{
+}
+   .teste{
    
     width: 15%;
     height: 30px;
     background-color: #bbbb;
     color:black;
     margin-top: 1%;
+}
+ 
+ .lista{
+    margin-bottom: 200px; 
+    width: 75%;
+    position: relative;
+    left: 12%;
+    margin-top:70px;
+ }  
+ 
+ .botaolistadelete{
+    border-color:#c02115;
+    background:linear-gradient(to bottom, #e0483a 5%, #bc0003 100%);
+    box-shadow:inset 0px 1px 0px 0px #fff4f3;
+    color:#fff;
+    border-radius: 3px;
+     
+ }
 
-    }
+ .botaolistadelete:hover {
+    background:linear-gradient(to bottom, #bc0003 5%, #fca8a1 100%);
+}
+
+ .botaolistaedit{
+    border-color:#dad99a;
+    background:linear-gradient(to bottom, #f7d6b3 5%, #ebe048 100%);
+    border-radius: 3px;
+    text-shadow:0px 1px 0px #ffee66;
+ }
+
+ .botaolistaedit:hover {
+    background:linear-gradient(to bottom, #ebe048 5%, #f7d6b3 100%);
+}
+
+.botaolistaedit:active {
+    position:relative;
+    top:2px;
+}
+
+.listacabecalho{
+    background-color: #b9acac;
+    
+    
 }
